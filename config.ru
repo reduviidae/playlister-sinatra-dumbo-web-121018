@@ -8,7 +8,7 @@ end
 # require_relative 'app/controllers/songs_controller'
 
 use Rack::MethodOverride
-
+use GenresController
 use ArtistsController
 use SongsController
 run ApplicationController
