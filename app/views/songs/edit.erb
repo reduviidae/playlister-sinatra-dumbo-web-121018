@@ -1,0 +1,14 @@
+<form action="/songs/<%= @song.id %>">
+  <input type="hidden" value="patch" name="_method">
+  <input type="text" name="song[name]" value="<%= @song.name %>">
+<select name="artist_id">
+    <% @artists.each do |artist| %>
+
+    <option value="<%= artist.id %>" <%='selected' if @song.artist == artist %>>
+      <%= artist.name %>
+    </option>
+  <% end %>
+
+  </select>
+  <input type="submit" "Edit Song">
+</form>
