@@ -6,8 +6,17 @@ class SongsController < ApplicationController
     binding.pry
   end
 
+  get '/songs/new' do
+    @artists = Artist.all
+  end
+
+  post "songs" do
+    binding.pry
+  end
+
   get '/songs/:id' do
-    puts "this is the show page"
+    @songs = Song.find(params[:id])
+    erb :'songs/show'
   end
 
 end

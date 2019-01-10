@@ -1,7 +1,6 @@
 <ul>
   <% @songs.each do |song| %>
     <li><%= song.title %></li>
-    <% binding.pry %>
     <a href="/song/<%= song.id %>"></a>
   <% end %>
 </ul>
