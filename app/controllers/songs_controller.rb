@@ -11,6 +11,13 @@ class SongsController < ApplicationController
   end
 
   post "/songs" do
+    @song = Song.create(params)
+    redirect to "songs/#{@song.id}"
+  end
+
+  patch '/songs/:id' do
+    binding.pry
+    @song = Song.find(params[:id])
   end
 
   get '/songs/:id' do
@@ -19,15 +26,7 @@ class SongsController < ApplicationController
   end
 
 
-
-  patch '/songs/:id' do
-    binding.pry
-    @song = Song.find(params[:id])
-  end
-
-
   get '/songs/:id/edit' do
-    binding.pry
     @song = Song.find(params[:id])
     @artists = Artist.all
     erb :'songs/edit'

@@ -1,6 +1,7 @@
-<form action="/songs/<%= @song.id %>">
+<form method="post" action="/songs/<%= @song.id %>">
   <input type="hidden" value="patch" name="_method">
   <input type="text" name="song[name]" value="<%= @song.name %>">
+
 <select name="artist_id">
     <% @artists.each do |artist| %>
 
