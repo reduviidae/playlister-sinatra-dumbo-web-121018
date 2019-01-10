@@ -10,8 +10,7 @@ class SongsController < ApplicationController
     erb :'songs/new'
   end
 
-  post "songs" do
-    # binding.pry
+  post "/songs" do
   end
 
   get '/songs/:id' do
@@ -19,10 +18,24 @@ class SongsController < ApplicationController
     erb :'songs/show'
   end
 
+
+
+  patch '/songs/:id' do
+    binding.pry
+    @song = Song.find(params[:id])
+  end
+
+
   get '/songs/:id/edit' do
+    binding.pry
     @song = Song.find(params[:id])
     @artists = Artist.all
     erb :'songs/edit'
   end
+
+
+
+
+
 
 end
